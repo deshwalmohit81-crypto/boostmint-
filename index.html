@@ -243,7 +243,21 @@ function saveOrder() {
 
   localStorage.setItem("boostmintOrders", JSON.stringify(orders));
   window.open("https://wa.link/7vnybr");
+} <script>
+function saveOrder() {
+  let orders = JSON.parse(localStorage.getItem("boostmintOrders")) || [];
+
+  orders.push({
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    service: document.getElementById("service").value,
+    status: "Pending"
+  });
+
+  localStorage.setItem("boostmintOrders", JSON.stringify(orders));
+  window.open("https://wa.link/7vnybr");
 }
+</script>
 </script>
 </div>
 
@@ -264,6 +278,7 @@ function saveOrder() {
   </footer>
 </body>
   </html>
+
 
 
 
