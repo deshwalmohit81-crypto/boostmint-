@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Boostmint.in</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:linear-gradient(135deg,#020617,#0f172a);color:#fff;min-height:100vh}.header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(255,255,255,.05)} .header h1{color:#22d3ee;font-size:24px} .header button{padding:10px 20px;border:none;border-radius:20px;background:#ef4444;color:#fff;cursor:pointer}
+
+.container{padding:40px} .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px} .card{background:rgba(255,255,255,.07);padding:25px;border-radius:20px;animation:fadeUp .8s} .card h3{color:#22d3ee;margin-bottom:10px} .card p{color:#cbd5f5;font-size:15px} .card a{display:inline-block;margin-top:15px;color:#22d3ee;text-decoration:none;font-weight:600}
+
+.orders{margin-top:50px} .orders h2{margin-bottom:20px;color:#22d3ee} table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.05)} th,td{padding:14px;border-bottom:1px solid #1e293b;text-align:left} th{color:#22d3ee}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1}} </style>
+
+</head>
+<body><div class="header">
+  <h1>User Dashboard</h1>
+  <button onclick="logout()">Logout</button>
+</div><div class="container"> <div class="cards">
+    <div class="card">
+      <h3>Quick Order</h3>
+      <p>Place a new social media or API order instantly.</p>
+      <a href="order.html">Place Order →</a>
+    </div><div class="card">
+  <h3>SMM Services</h3>
+  <p>View Instagram, YouTube & Facebook services.</p>
+  <a href="smm.html">View Services →</a>
+</div>
+
+<div class="card">
+  <h3>API Plans</h3>
+  <p>Check monthly managed social media plans.</p>
+  <a href="serices.html">View Plans →</a>
+</div>
+
+<div class="card">
+  <h3>Contact Support</h3>
+  <p>Need help? Chat with us on WhatsApp.</p>
+  <a href="https://wa.me/919389667600" target="_blank">Chat Now →</a>
+</div>
+
+  </div> <div class="orders">
+    <h2>My Orders</h2>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Service</th><th>Time</th></tr>
+      </thead>
+      <tbody id="myOrders"></tbody>
+    </table>
+  </div></div><script>
+// Login protection
+if(localStorage.getItem('loggedIn') !== 'true'){
+  window.location.href = 'login.html';
+}
+
+// Load user orders
+const orders = JSON.parse(localStorage.getItem('orders')) || [];
+const tbody = document.getElementById('myOrders');
+
+orders.forEach(o => {
+  tbody.innerHTML += `<tr><td>${o.name}</td><td>${o.service}</td><td>${o.time}</td></tr>`;
+});
+
+function logout(){
+  localStorage.removeItem('loggedIn');
+  window.location.href = 'login.html';
+}
+</script></body>
+</html>
