@@ -46,11 +46,25 @@
       margin: auto;
     }
     .service-box {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #ffffff, #f0fff9);
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+    .service-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .service-box ul li::before {
+      content: "✔ ";
+      color: #006b5c;
+      font-weight: bold;
     }
     h2 {
       color: #006b5c;
@@ -169,6 +183,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
