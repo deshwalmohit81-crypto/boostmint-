@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Order | Boostmint.in</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:linear-gradient(135deg,#020617,#0f172a);color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.form{background:rgba(255,255,255,.06);padding:35px;border-radius:20px;width:420px;animation:fade .8s}
+.form h2{text-align:center;color:#22d3ee;margin-bottom:20px}
+label{font-size:14px;color:#cbd5f5}
+input,select{width:100%;padding:12px;margin:10px 0 18px;border-radius:10px;border:none}
+button{width:100%;padding:14px;border:none;border-radius:30px;background:#22d3ee;font-weight:600;cursor:pointer}
+button:hover{opacity:.9}
+@keyframes fade{from{opacity:0;transform:scale(.95)}to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="form">
+<h2>Quick Order</h2>
+<label>Name</label>
+<input id="name" placeholder="Your Name">
+<label>WhatsApp Number</label>
+<input id="phone" placeholder="WhatsApp Number">
+<label>Select Service</label>
+<select id="service">
+<option>Instagram – 1k Likes (₹11)</option>
+<option>Instagram – 1k Followers (₹69)</option>
+<option>YouTube – 1k Views (₹111)</option>
+<option>Facebook – 1k Followers (₹49)</option>
+<option>API Basic Plan (₹7,999)</option>
+<option>API Standard Plan (₹10,999)</option>
+<option>API Premium Plan (₹17,499)</option>
+</select>
+<button onclick="saveOrder()">Submit Order</button>
+</div>
+
+<script>
+function saveOrder(){
+  const order={
+    name:document.getElementById('name').value,
+    phone:document.getElementById('phone').value,
+    service:document.getElementById('service').value,
+    time:new Date().toLocaleString()
+  }
+  let orders=JSON.parse(localStorage.getItem('orders'))||[]
+  orders.push(order)
+  localStorage.setItem('orders',JSON.stringify(orders))
+  alert('Order Submitted Successfully')
+  window.location.href='dashboard.html'
+}
+</script>
+</body>
+</html>
