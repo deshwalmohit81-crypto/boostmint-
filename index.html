@@ -49,39 +49,21 @@
 
 <header>
   <h1>Boostmint.in</h1>
-  <nav>
-    <a href="#">Home</a>
+ <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-menu" id="navMenu">
+    <a href="index.html">Home</a>
     <a href="#services">Services</a>
+    <a href="smm.html">SMM Services</a>
+    <a href="serices.html">API Plans</a>
     <a href="#pricing">Pricing</a>
-    <a href="serices.html">API plans </a>
-    <a href="smm.html">SMM serices</a>
-    <a href="login.html">Login</a> 
+    <a href="login.html">Login</a>
     <a href="signup.html">Signup</a>
-    <a href="#contact">Contact</a>
   </nav>
-</header>
-  <style>
-/* Hamburger Menu */
-.menu-toggle{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-.menu-toggle span{
-  width:28px;
-  height:3px;
-  background:#22d3ee;
-  transition:.3s;
-}
-
-@media(max-width:900px){
-  nav{position:absolute;top:70px;right:20px;background:#020617;padding:20px;border-radius:12px;display:none;flex-direction:column}
-  nav a{margin:12px 0}
-  .menu-toggle{display:flex}
-}
-</style>
-
 
 <section class="hero">
   <div class="hero-text">
@@ -158,6 +140,7 @@
 
 </body>
 </html>
+
 
 
 
