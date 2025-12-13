@@ -215,22 +215,34 @@
 <div class="order-form">
   <h2>Quick Order</h2>
 <form
-  action="https://wa.link/7vnybr"
-  method="POST"
->
-    <input type=\"text\" placeholder=\"Your Name\" required>
-    <input type=\"tel\" placeholder=\"Phone Number\" required>
-    <select id=\"service\">
-      <option > Select</option>
-      <option>Website Management</option>
-      <option>Website Development</option>
-      <option>Instagram Service</option>
-      <option>YouTube Service</option>
-      <option > Facebook Services</option>
-      <option>WhatsApp API</option>
-    </select>
-    <button type=\"submit\">Order now </button>
-  </form>
+<form onsubmit="saveOrder(); return false;">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="tel" id="phone" placeholder="Phone Number" required>
+
+  <select id="service">
+    <option>Website Management</option>
+    <option>Instagram Service</option>
+    <option>YouTube Service</option>
+    <option>WhatsApp API</option>
+  </select>
+
+  <button type="submit">Submit Order</button>
+</form>
+
+<script>
+function saveOrder() {
+  let orders = JSON.parse(localStorage.getItem("boostmintOrders")) || [];
+
+  orders.push({
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    service: document.getElementById("service").value
+  });
+
+  localStorage.setItem("boostmintOrders", JSON.stringify(orders));
+  window.open("https://wa.link/7vnybr");
+}
+</script>
 </div>
 
   </section><a class="whatsapp-float" href="https://wa.link/7vnybr">Chat on WhatsApp</a>
@@ -250,6 +262,7 @@
   </footer>
 </body>
   </html>
+
 
 
 
