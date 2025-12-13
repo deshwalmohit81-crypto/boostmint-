@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login | Boostmint.in</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#020617,#0f172a);font-family:Poppins;color:#fff}
-.form{background:rgba(255,255,255,.06);padding:40px;border-radius:20px;width:350px;animation:fade .8s}
-.form h2{text-align:center;color:#22d3ee;margin-bottom:20px}
-input{width:100%;padding:12px;margin:12px 0;border-radius:10px;border:none}
-button{width:100%;padding:12px;border:none;border-radius:30px;background:#22d3ee;font-weight:600;cursor:pointer}
-button:hover{opacity:.9}
-.form p{text-align:center;margin-top:15px;font-size:14px}
-.form a{color:#22d3ee;text-decoration:none}
-@keyframes fade{from{opacity:0;transform:scale(.9)}to{opacity:1}}
-</style>
-</head>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | Boostmint.in</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>*{  margin:0;  padding:0;  box-sizing:border-box;  font-family:Poppins;}body{  min-height:100vh;  display:flex;  align-items:center;  justify-content:center;  background:linear-gradient(135deg,#020617,#0f172a);}.login-box{  width:380px;  background:rgba(255,255,255,0.08);  backdrop-filter:blur(10px);  padding:35px;  border-radius:22px;  color:#fff;  animation:zoom .6s ease;  box-shadow:0 20px 50px rgba(0,0,0,.4);}.login-box h2{  text-align:center;  color:#22d3ee;  margin-bottom:8px;}.login-box p{  text-align:center;  font-size:14px;  color:#cbd5f5;  margin-bottom:22px;}label{  font-size:13px;  color:#cbd5f5;}input{  width:100%;  padding:12px 14px;  margin:8px 0 16px;  border-radius:12px;  border:none;  outline:none;}button{  width:100%;  padding:14px;  border:none;  border-radius:30px;  background:#22d3ee;  font-weight:700;  cursor:pointer;  transition:.3s;}button:hover{  transform:translateY(-2px);  box-shadow:0 12px 30px rgba(34,211,238,.4);}.links{  display:flex;  justify-content:space-between;  margin-top:15px;  font-size:13px;}.links a{  color:#22d3ee;  text-decoration:none;}@keyframes zoom{  from{opacity:0;transform:scale(.9)}  to{opacity:1;transform:scale(1)}}</style></head>
 <body>
-<div class="form">
-<h2>Login</h2>
-<input type="email" placeholder="Email">
-<input type="password" placeholder="Password">
-<button>Login</button>
-<p>Don�t have an account? <a href="signup.html">Sign up</a></p>
-</div>
-</body>
-</html>
+<div class="login-box">  <h2>Welcome Back</h2>  <p>Login to Boostmint Dashboard</p>
+  <label>Email</label>  <input type="email" id="email" placeholder="you@example.com">
+  <label>Password</label>  <input type="password" id="password" placeholder="••••••••">
+  <button onclick="login()">Login</button>
+  <div class="links">    <a href="signup.html">Create Account</a>    <a href="#">Forgot Password?</a>  </div></div>
+<script>function login(){  const email = document.getElementById('email').value;  const pass = document.getElementById('password').value;
+  if(!email || !pass){    alert("Please fill all fields");    return;  }
+  // demo login  localStorage.setItem("loggedIn","true");  window.location.href="pdashboard.html";}</script>
+</body></html>
