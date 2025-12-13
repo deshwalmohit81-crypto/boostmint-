@@ -73,7 +73,18 @@
     <p>Smart, safe & organic digital growth solutions.
        Social Media Marketing, APIs, Web Development & Support.</p>
 
-    <button onclick="window.location.href='signup.html'">Get Started</button>
+  <button onclick="getStarted()">Get Started</button>
+
+<script>
+function getStarted(){
+  if(localStorage.getItem("loggedIn") === "true"){
+    window.location.href = "dashboard.html";
+  } else {
+    window.location.href = "signup.html";
+  }
+}
+</script>
+
   </div>
   <div class="hero-img">
     <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png">
@@ -143,6 +154,7 @@
 
 </body>
 </html>
+
 
 
 
