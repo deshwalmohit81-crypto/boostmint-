@@ -93,16 +93,28 @@
     ul li {
       margin: 8px 0;
     }
-    .contact {
-      background: ##FF0000;
-      color: Red;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .contact a {
-      color: #fff;
-      font-weight: bold;
-    }
+    ..contact-box {
+  max-width: 420px;
+  margin: auto;
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.contact-box p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.contact-box a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+  }
     footer {
       text-align: center;
       padding: 15px;
@@ -257,16 +269,37 @@ function saveOrder() {
   <a href="https://www.upi.me/pay?pa=mohitdeshwal081@axl" class="pay-btn">Pay Now</a>
   </div>
 
-  <section class=\"contact\" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:deshwalmohit.81@gmail.com">deshwalmohit.81@gmail.com</a></p>
-    <p>Phone: +91 93896 67600</p>
-    <p>WhatsApp: <a href="https://wa.link/7vnybr">Click Here</a></p>
-  </section>  <footer>
+  <section class="contact" id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-box">
+    <p>📧 <strong>Email</strong></p>
+    <p>
+      <a href="mailto:deshwalmohit.81@gmail.com">
+        deshwalmohit.81@gmail.com
+      </a>
+    </p>
+
+    <p>📞 <strong>Call / WhatsApp</strong></p>
+    <p>
+      <a href="tel:+919389667600">
+        +91 93896 67600
+      </a>
+    </p>
+
+    <p>💬 <strong>Quick Chat</strong></p>
+    <p>
+      <a href="https://wa.link/7vnybr" target="_blank">
+        Click here to chat on WhatsApp
+      </a>
+    </p>
+  </div>
+  </section> <footer>
     © 2025 Boostmint.in — All Rights Reserved
   </footer>
 </body>
   </html>
+
 
 
 
